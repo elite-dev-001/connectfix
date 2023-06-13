@@ -1,4 +1,5 @@
 import 'package:connect_fix/components/misc/spacer.dart';
+import 'package:connect_fix/pages/dashboard/user/payment/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -57,27 +58,35 @@ class Balance extends StatelessWidget {
         ),
         HSpace(7.w),
         Expanded(
-          child: Container(
-            height: 100.w,
-            // padding: EdgeInsets.only(top: 26.w, bottom: 25.08.w),
-            decoration: BoxDecoration(
-              color: const Color(0xFF6169D2),
-              borderRadius: BorderRadius.circular(5),
-              boxShadow: [
-                BoxShadow(
-                    offset: const Offset(0, 4),
-                    spreadRadius: 0,
-                    blurRadius: 4,
-                    color: const Color(0xFF000000).withOpacity(0.25))
-              ],
+          child: GestureDetector(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Payment(),
+              ),
             ),
-            alignment: Alignment.center,
-            child: const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.add),
-                Text("Add money"),
-              ],
+            child: Container(
+              height: 100.w,
+              // padding: EdgeInsets.only(top: 26.w, bottom: 25.08.w),
+              decoration: BoxDecoration(
+                color: const Color(0xFF6169D2),
+                borderRadius: BorderRadius.circular(5),
+                boxShadow: [
+                  BoxShadow(
+                      offset: const Offset(0, 4),
+                      spreadRadius: 0,
+                      blurRadius: 4,
+                      color: const Color(0xFF000000).withOpacity(0.25))
+                ],
+              ),
+              alignment: Alignment.center,
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.add),
+                  Text("Add money"),
+                ],
+              ),
             ),
           ),
         )
