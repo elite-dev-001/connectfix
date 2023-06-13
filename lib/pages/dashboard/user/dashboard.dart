@@ -6,6 +6,7 @@ import 'package:connect_fix/pages/dashboard/user/widgets/recommended.dart';
 import 'package:connect_fix/pages/dashboard/user/widgets/search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -35,6 +36,23 @@ class Dashboard extends StatelessWidget {
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color(0xFF6169D2),
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset("assets/icons/home.svg"),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset("assets/icons/Calendar_Days.svg"),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset("assets/icons/user.svg"),
+            label: '',
+          ),
+        ],
       ),
     );
   }
