@@ -1,4 +1,5 @@
 import 'package:connect_fix/components/misc/spacer.dart';
+import 'package:connect_fix/pages/auth/user/sign_in.dart';
 // import 'package:connect_fix/pages/auth/user/sign_in.dart';
 import 'package:connect_fix/pages/auth/user/sign_up/sign_up.dart';
 import 'package:connect_fix/pages/auth/widgets/auth_btn.dart';
@@ -62,7 +63,8 @@ class Auth extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SignUp(),
+                      builder: (context) =>
+                          text == "in" ? const SignIn() : const SignUp(),
                     ),
                   );
                 },
@@ -78,7 +80,8 @@ class Auth extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SignUp(),
+                      builder: (context) =>
+                          text == "in" ? const SignIn() : const SignUp(),
                     ),
                   );
                 },

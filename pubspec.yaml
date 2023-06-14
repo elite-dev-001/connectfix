@@ -68,6 +68,7 @@ flutter:
     - assets/images/electrical/
     - assets/images/painting/
     - assets/images/plumbing/
+    - assets/images/booking/
     - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
