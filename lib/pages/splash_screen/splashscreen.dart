@@ -119,7 +119,15 @@ class _SplashScreenState extends State<SplashScreen> {
                           .toList(),
                     ),
                   ),
-                if (_currentPageIndex != 2) const SplashButton(),
+                if (_currentPageIndex != 2)
+                  SplashButton(
+                    onTap: () {
+                      _pageController.nextPage(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.ease,
+                      );
+                    },
+                  ),
                 if (_currentPageIndex == 2) const ColumnBtn()
               ],
             ),
