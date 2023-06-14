@@ -1,3 +1,4 @@
+import 'package:connect_fix/pages/dashboard/user/booking/booking_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -212,19 +213,27 @@ class ServiceDetails extends StatelessWidget {
                       ],
                     ),
                     VSpace(25.w),
-                    Container(
-                      height: 40.w,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF6169D2),
-                        borderRadius: BorderRadius.circular(5),
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BookingDetails(),
+                        ),
                       ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Book now",
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xFFFFFFFF),
+                      child: Container(
+                        height: 40.w,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF6169D2),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Book now",
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xFFFFFFFF),
+                          ),
                         ),
                       ),
                     )
