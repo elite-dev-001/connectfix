@@ -1,8 +1,11 @@
 import 'package:connect_fix/components/misc/spacer.dart';
-import 'package:connect_fix/pages/auth/user/sign_in.dart';
+// import 'package:connect_fix/pages/auth/user/sign_in.dart';
 import 'package:connect_fix/pages/auth/user/sign_up/sign_up.dart';
 import 'package:connect_fix/pages/auth/widgets/auth_btn.dart';
+import 'package:connect_fix/pages/dashboard/blocs/user_blocs.dart';
+import 'package:connect_fix/pages/dashboard/blocs/user_events.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -54,23 +57,31 @@ class Auth extends StatelessWidget {
               AuthBtn(
                 text: "User",
                 border: false,
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignIn(),
-                  ),
-                ),
+                onTap: () {
+                  context.read<UserBlocs>().add(const UserTypeEvent("user"));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUp(),
+                    ),
+                  );
+                },
               ),
               VSpace(21.sp),
               AuthBtn(
                 text: "Service Provider",
                 border: true,
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignUp(),
-                  ),
-                ),
+                onTap: () {
+                  context
+                      .read<UserBlocs>()
+                      .add(const UserTypeEvent("provider"));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUp(),
+                    ),
+                  );
+                },
               )
             ],
           ),

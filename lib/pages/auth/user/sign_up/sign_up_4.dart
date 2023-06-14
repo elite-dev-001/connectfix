@@ -1,17 +1,16 @@
 import 'package:connect_fix/components/misc/spacer.dart';
-import 'package:connect_fix/pages/auth/user/sign_up/sign_up_4.dart';
 import 'package:connect_fix/pages/auth/user/sign_up/terms.dart';
 import 'package:connect_fix/pages/auth/widgets/auth_btn.dart';
 import 'package:connect_fix/pages/auth/widgets/auth_form.dart';
-import 'package:connect_fix/pages/auth/widgets/auth_upload.dart';
+// import 'package:connect_fix/pages/auth/widgets/auth_upload.dart';
 import 'package:connect_fix/pages/dashboard/blocs/user_blocs.dart';
 import 'package:connect_fix/pages/dashboard/blocs/user_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SignUp3 extends StatelessWidget {
-  const SignUp3({super.key});
+class SignUp4 extends StatelessWidget {
+  const SignUp4({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,43 +26,8 @@ class SignUp3 extends StatelessWidget {
               child: Column(
                 children: [
                   VSpace(97.w),
-                  AuthForm(
-                      label: state.userType == "provider"
-                          ? "Guarantor/Surety Phone Number 2"
-                          : "Referee name 1"),
-                  AuthForm(
-                      label: state.userType == "provider"
-                          ? "Profession"
-                          : "Referee Business name 1"),
-                  AuthForm(
-                      label: state.userType == "provider"
-                          ? "Business Address"
-                          : "Referee Phone number"),
-                  VSpace(16.w),
-                  if (state.userType == "user")
-                    const AuthUpload(
-                      text: "Upload profile picture",
-                    ),
-                  if (state.userType == "user") VSpace(26.w),
-                  AuthForm(
-                    label: state.userType == "provider"
-                        ? "Business State"
-                        : "Password",
-                    isPassword: true,
-                  ),
-                  AuthForm(
-                    label: state.userType == "provider"
-                        ? "Business LGA"
-                        : "Confirm Password",
-                    isPassword: true,
-                  ),
-                  if (state.userType == "provider")
-                    const AuthForm(label: "Business Town/Area"),
-                  if (state.userType == "provider")
-                    const AuthUpload(
-                      text: "Upload profile picture",
-                    ),
-                  if (state.userType == "provider") VSpace(26.w),
+                  const AuthForm(label: "Password"),
+                  const AuthForm(label: "Confirm Password"),
                   VSpace(16.w),
                   Row(
                     children: [
@@ -82,9 +46,7 @@ class SignUp3 extends StatelessWidget {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => state.userType == "user"
-                                  ? const Terms()
-                                  : const SignUp4(),
+                              builder: (context) => const Terms(),
                             ),
                           ),
                         ),
